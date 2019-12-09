@@ -11,8 +11,34 @@ import css from "../css/app.css"
 //
 import "phoenix_html"
 
+// === LiveView setup ===
 import {Socket} from "phoenix"
 import LiveSocket from "phoenix_live_view"
 
 let liveSocket = new LiveSocket("/live", Socket)
 liveSocket.connect()
+
+// === React component ===
+import React from "react";
+import { render } from "react-dom";
+import Route from "./components/Route.jsx";
+
+const initComponent = () => {
+  const dataEl = document.getElementById("route-data");
+  if (!dataEl) {
+    console.warn("Could not find route-data element");
+    return;
+  }
+
+  const data = JSON.parse(dataEl.innerHTML);
+
+  const rootEl = document.getElementById("route-root");
+  if (!rootEl) {
+    console.warn("Could not find route-root element");
+    return;
+  }
+
+  render(React.createElement(Route, data), rootEl);
+};
+
+initComponent();

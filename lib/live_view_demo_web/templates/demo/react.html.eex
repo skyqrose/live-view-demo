@@ -1,1 +1,5 @@
-<h2>React goes here</h2>
+<script id="route-data" type="text/plain">
+  <%= raw Jason.encode!(@route) %>
+</script>
+
+<div id="route-root"></div>

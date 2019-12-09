@@ -2,18 +2,24 @@ defmodule LiveViewDemo.Backend do
   @moduledoc "Returns randomized fake data for the purposes of this demo."
 
   defmodule Route do
+    # NOTE: Making these structs JSON-encodable is for the sake of the React version only, and in
+    # most non-trivial apps the task of making all structs "JSON-clean" would be more complicated.
+    @derive Jason.Encoder
     defstruct [:name, :stops, :vehicles]
   end
 
   defmodule Stop do
+    @derive Jason.Encoder
     defstruct [:id, :name, :predictions]
   end
 
   defmodule Prediction do
+    @derive Jason.Encoder
     defstruct [:id, :minutes]
   end
 
   defmodule Vehicle do
+    @derive Jason.Encoder
     defstruct [:id, :latitude, :longitude]
   end
 
