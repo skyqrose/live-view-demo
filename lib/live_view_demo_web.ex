@@ -21,6 +21,8 @@ defmodule LiveViewDemoWeb do
     quote do
       use Phoenix.Controller, namespace: LiveViewDemoWeb
 
+      import Phoenix.LiveView.Controller
+
       import Plug.Conn
       import LiveViewDemoWeb.Gettext
       alias LiveViewDemoWeb.Router.Helpers, as: Routes
@@ -39,6 +41,9 @@ defmodule LiveViewDemoWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
+      import Phoenix.LiveView,
+        only: [live_render: 2, live_render: 3, live_link: 1, live_link: 2, live_component: 4]
+
       import LiveViewDemoWeb.ErrorHelpers
       import LiveViewDemoWeb.Gettext
       alias LiveViewDemoWeb.Router.Helpers, as: Routes
@@ -50,6 +55,7 @@ defmodule LiveViewDemoWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
