@@ -17,10 +17,7 @@ defmodule LiveViewDemoWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/demo/react/:id", DemoController, :react
+    get "/demo/live_view/:id", DemoController, :live_view
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", LiveViewDemoWeb do
-  #   pipe_through :api
-  # end
 end
