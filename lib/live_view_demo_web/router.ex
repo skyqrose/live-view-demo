@@ -20,4 +20,10 @@ defmodule LiveViewDemoWeb.Router do
     get "/demo/react/:id", DemoController, :react
     get "/demo/live_view/:id", DemoController, :live_view
   end
+
+  scope "/", LiveViewDemoWeb do
+    pipe_through :api
+
+    get "/demo/react_api/:id", DemoController, :react_api
+  end
 end

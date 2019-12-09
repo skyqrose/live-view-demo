@@ -5,7 +5,7 @@ defmodule LiveViewDemo.Backend do
     # NOTE: Making these structs JSON-encodable is for the sake of the React version only, and in
     # most non-trivial apps the task of making all structs "JSON-clean" would be more complicated.
     @derive Jason.Encoder
-    defstruct [:name, :stops, :vehicles]
+    defstruct [:id, :name, :stops, :vehicles]
   end
 
   defmodule Stop do
@@ -23,8 +23,8 @@ defmodule LiveViewDemo.Backend do
     defstruct [:id, :latitude, :longitude]
   end
 
-  def route(route_id) do
-    %Route{name: route_id, stops: fake_stops(), vehicles: fake_vehicles()}
+  def route(id) do
+    %Route{id: id, name: "#{id} Line", stops: fake_stops(), vehicles: fake_vehicles()}
   end
 
   defp fake_stops do
