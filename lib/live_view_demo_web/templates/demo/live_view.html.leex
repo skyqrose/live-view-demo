@@ -1,1 +1,16 @@
-<h2>LiveView goes here</h2>
+<h2><%= @route.name %></h2>
+
+<table border="1" cellPadding="8" cellSpacing="0">
+  <tbody>
+    <%= for stop <- @route.stops do %>
+      <tr>
+        <td><%= stop.name %></td>
+        <td>
+          <%= for prediction <- stop.predictions do %>
+            <div><%= prediction.minutes %> min.</div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

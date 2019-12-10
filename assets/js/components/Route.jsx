@@ -37,10 +37,8 @@ export default (props) => {
             <tr key={stop.id}>
               <td>{stop.name}</td>
               <td>
-                {stop.predictions
-                  .sort((a, b) => a.minutes - b.minutes)
-                  .map(prediction =>
-                    <div key={prediction.id}>{prediction.minutes} min.</div>
+                {stop.predictions.map(prediction =>
+                  <div key={prediction.id}>{prediction.minutes} min.</div>
                 )}
               </td>
             </tr>

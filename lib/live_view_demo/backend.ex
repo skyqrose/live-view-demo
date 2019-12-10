@@ -53,8 +53,8 @@ defmodule LiveViewDemo.Backend do
 
   defp fake_predictions do
     [
-      %Prediction{id: "1", minutes: :rand.uniform(20)},
-      %Prediction{id: "2", minutes: :rand.uniform(20)}
+      %Prediction{id: "1", minutes: :rand.uniform(10)},
+      %Prediction{id: "2", minutes: :rand.uniform(10) + 10}
     ]
   end
 end
