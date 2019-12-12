@@ -12,11 +12,16 @@ import css from "../css/app.css"
 import "phoenix_html"
 
 // === LiveView setup ===
-import {Socket} from "phoenix"
-import LiveSocket from "phoenix_live_view"
+import {Socket} from "phoenix";
+import LiveSocket from "phoenix_live_view";
 
-let liveSocket = new LiveSocket("/live", Socket)
-liveSocket.connect()
+let liveSocket = new LiveSocket("/live", Socket);
+liveSocket.connect();
+
+import { LeafletMap, LeafletTiles, LeafletMarker } from "./elements/leaflet";
+customElements.define("leaflet-map", LeafletMap);
+customElements.define("leaflet-tiles", LeafletTiles);
+customElements.define("leaflet-marker", LeafletMarker);
 
 // === React component ===
 import React from "react";

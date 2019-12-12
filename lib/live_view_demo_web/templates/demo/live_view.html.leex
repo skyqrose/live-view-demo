@@ -1,5 +1,15 @@
 <h2><%= @route.name %></h2>
 
+<leaflet-map lat="42.5" lng="-71.5" zoom="8">
+  <leaflet-tiles
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors">
+  </leaflet-tiles>
+  <%= for vehicle <- @route.vehicles do %>
+    <leaflet-marker lat="<%= vehicle.latitude %>" lng="<%= vehicle.longitude %>"></leaflet-marker>
+  <% end %>
+</leaflet-map>
+
 <table border="1" cellPadding="8" cellSpacing="0">
   <tbody>
     <%= for stop <- @route.stops do %>
