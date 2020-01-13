@@ -1,0 +1,5 @@
+<script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/elm.js") %>"></script>
+<script>
+  Elm.Main.init()
+</script>
+

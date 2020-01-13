@@ -2,4 +2,5 @@
 <ul>
   <li><%= link "React version", to: "/demo/react/Red" %></li>
   <li><%= link "LiveView version", to: "/demo/live_view/Red" %></li>
+  <li><%= link "Elm version", to: "/demo/elm/Red" %></li>
 </ul>

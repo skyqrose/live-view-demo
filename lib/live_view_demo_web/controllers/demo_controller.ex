@@ -14,4 +14,8 @@ defmodule LiveViewDemoWeb.DemoController do
   def live_view(conn, %{"id" => id}) do
     live_render(conn, LiveViewDemoWeb.DemoLive, session: %{id: id})
   end
+
+  def elm(conn, %{"id" => id}) do
+    render(conn, "elm.html")
+  end
 end

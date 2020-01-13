@@ -19,6 +19,7 @@ defmodule LiveViewDemoWeb.Router do
     get "/", PageController, :index
     get "/demo/react/:id", DemoController, :react
     get "/demo/live_view/:id", DemoController, :live_view
+    get "/demo/elm/:id", DemoController, :elm
   end
 
   scope "/", LiveViewDemoWeb do
